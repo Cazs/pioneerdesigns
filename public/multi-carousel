@@ -1,0 +1,77 @@
+.container
+.col-xs-12
+			h3(style="text-align:center") Associated Brands
+			.well
+    #brands-carousel.carousel.slide
+                        // Carousel items
+                        .carousel-inner
+                            .item.active
+                                .row
+                                    .col-xs-3
+                                        a(href='#x')
+                                        img.img-responsive(src='/images/partners/1.png', alt='Image')
+                                    .col-xs-3
+                                        a(href='#x')
+                                        img.img-responsive(src='/images/partners/2.png', alt='Image')
+                                    .col-xs-3
+                                        a(href='#x')
+                                        img.img-responsive(src='/images/partners/3.png', alt='Image')
+                                    .col-xs-3
+                                        a(href='#x')
+                                        img.img-responsive(src='/images/partners/4.png', alt='Image')
+                            .item
+                                .row
+                                    .col-xs-3
+                                        a(href='#x')
+                                        img.img-responsive(src='/images/partners/5.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/6.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/7.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/8.png', alt='Image')
+                            .item
+                                .row
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/9.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/10.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/11.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/12.png', alt='Image')
+                            .item
+                                .row
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/13.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/14.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/15.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/16.png', alt='Image')
+                            .item
+                                .row
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/17.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/18.png', alt='Image')
+                                    .col-xs-3
+                                        a.thumbnail(href='#x')
+                                        img.img-responsive(src='/images/partners/19.png', alt='Image')
+
+                            a.left.carousel-control(href='#brands-carousel', data-slide='prev') ‹
+                            a.right.carousel-control(href='#brands-carousel', data-slide='next') ›

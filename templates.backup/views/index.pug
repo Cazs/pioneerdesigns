@@ -1,0 +1,75 @@
+extends ../layouts/default
+
+block content
+	#ottomans_carousel.carousel.slide(data-ride='carousel')
+		ol.carousel-indicators(style="background-color:#343434;width:100px;margin:auto;margin-left:-50px;border-radius:15px;")
+			li.active(data-target='ottomans_carousel', data-slide-to='1')
+			li(data-target='ottomans_carousel', data-slide-to='2')
+			li(data-target='ottomans_carousel', data-slide-to='3')
+			li(data-target='ottomans_carousel', data-slide-to='4')
+			li(data-target='ottomans_carousel', data-slide-to='5')
+			li(data-target='ottomans_carousel', data-slide-to='6')
+		.carousel-inner(role='listbox')
+			.item.active
+				img.slide-1(src='/images/slider/1.jpg', alt='First slide')
+				.container
+					.carousel-caption
+						//a.btn.btn-lg.btn-default(href='#', style="border: 1px solid #6EC91E;") Learn More &gt;&gt;
+			.item
+				img.slide-2(src='/images/slider/2.jpg', alt='Second slide')
+				.container
+					.carousel-caption
+						//a.btn.btn-lg.btn-default(href='#', style="border: 1px solid #6EC91E;") Learn More &gt;&gt;
+			.item
+				img.slide-3(src='/images/slider/3.jpg', alt='Third slide')
+				.container
+					.carousel-caption
+						//a.btn.btn-lg.btn-default(href='#', style="border: 1px solid #6EC91E;") Learn More &gt;&gt;
+			.item
+				img.slide-4(src='/images/slider/4.jpg', alt='Fourth slide')
+				.container
+					.carousel-caption
+						//a.btn.btn-lg.btn-default(href='#', style="border: 1px solid #6EC91E;") Learn More &gt;&gt;
+			.item
+				img.slide-5(src='/images/slider/5.jpg', alt='Fifth slide')
+				.container
+					.carousel-caption
+						//a.btn.btn-lg.btn-default(href='#', style="border: 1px solid #6EC91E;") Learn More &gt;&gt;
+			.item
+				img.slide-6(src='/images/slider/6.jpg', alt='Sixth slide')
+				.container
+					.carousel-caption
+						//a.btn.btn-lg.btn-default(href='#', style="border: 1px solid #6EC91E;") Learn More &gt;&gt;
+		a.left.carousel-control(href='#!/#ottomans_carousel', role='button', data-slide='prev')
+			span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+			span.sr-only Previous
+		a.right.carousel-control(href='#!/#ottomans_carousel', role='button', data-slide='next')
+			span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+			span.sr-only Next
+			//end of carousel
+
+	.row(style='margin-left:25px;margin-right:25px;margin-top:20px;')
+		.col-xs-12.col-sm-6.col-md-6.col-lg-4(style="")
+			//img(src='/images/supply.jpg', style='width:300px;height:165px;margin-top:10px;display:block;margin:auto;border-radius:15px;border: 1px solid #343434;', alt='INTRUSION SYSTEMS')
+			div(style='width:250px;height:250px;margin-top:10px;display:block;margin:auto;border-radius:200px;border: 1px solid rgb(156,0,186);')
+				img(src="http://95.85.57.110:8006/images/corner-suites.svg", style="width:100%;height:100%;")
+			h3(style='text-align:center') Corner Suites
+			p(style="text-align:center;")
+				a.btn.btn-lg.btn-default(href='http://95.85.57.110:8006/services', style="border: 1px solid rgb(156,0,186);") Learn More &gt;&gt;
+		.col-xs-12.col-sm-6.col-md-6.col-lg-4
+			//img(src='/images/install.jpg', style='width:340px;height:165px;margin-top:10px;display:block;margin:auto;border-radius:15px;border: 1px solid #343434;', alt='CCTV SURVEILLANCE SYSTEMS')
+			div(style='width:250px;height:250px;margin-top:10px;display:block;margin:auto;border-radius:200px;border: 1px solid rgb(156,0,186);')
+				img(src="http://95.85.57.110:8006/images/headboards.svg", style="width:80%;height:80%;margin-top:10%;margin-left:10%;")
+			h3(style='text-align:center') Head Boards
+			p(style="text-align:center;")
+				a.btn.btn-lg.btn-default(href='http://95.85.57.110:8006/services', style="border: 1px solid rgb(156,0,186);") Learn More &gt;&gt;
+		.col-xs-12.col-sm-6.col-md-6.col-lg-4
+			//img(src='/images/maintain.jpg', style='width:320px;height:165px;margin-top:10px;display:block;margin:auto;border-radius:15px;border: 1px solid #343434;', alt='FIRE DETECTION / SUPPRESSION')
+			div(style='width:250px;height:250px;margin-top:10px;display:block;margin:auto;border-radius:200px;border: 1px solid rgb(156,0,186);')
+				img(src="http://95.85.57.110:8006/images/dining.svg", style="width:80%;height:80%;margin-top:10%;margin-left:10%;")
+			h3(style='text-align:center') Dining Chairs
+			p(style="text-align:center;")
+				a.btn.btn-lg.btn-default(href='http://95.85.57.110:8006/services', style="border: 1px solid rgb(156,0,186);") Learn More &gt;&gt;
+
+block js
+	script(src="js/multi-slider.js")
