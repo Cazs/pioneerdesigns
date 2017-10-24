@@ -2,52 +2,10 @@ extends ../layouts/default
 
 block intro
 	.container
-		h1(style="margin-top:80px;text-align:center;") Contact Information
+		h1(style="margin-top:80px;text-align:center;") Get in touch with us
 		
 block content
 	.container(style="margin:auto;")
-		#map(style="width:100%;height:400px;")
-		.row
-			.col-xs-12.col-lg-6
-				h3 Contact One:
-				p Tel:  011&nbsp;000&nbsp;0000
-				p Fax: 011&nbsp;000&nbsp;0000
-				h3 Contact Two:
-				p Tel: 011&nbsp;000&nbsp;0000
-				p Address: 100 Random Street, Middleof.
-				h3 Contact Three:
-				p Tel: 011&nbsp;000&nbsp;0000
-				p Address: Joe Soap Street
-			.col-xs-12.col-lg-6
-				h3 Physical Address
-				p House number, street name
-				p Town
-				p City
-				p Code
-			.col-xs-12.col-lg-6
-				h3 Postal Address
-				p P.O. Box 000 
-				p Area
-				p Code
-
-		.row(style="border-top:1px solid rgb(156, 0, 186)")
-			.col-xs-12.col-lg-6
-				p(style="margin-top: 20px;font-size: 24px;")
-					strong Rashard
-					span (Chief Executive Officer)
-				p(style="font-size: 16px;") Cell: 076 741 7434
-				p(style="font-size: 16px;") Email: 
-					a(href="mailto:rashard@ottomans.co.za") rashard@ottomans.co.za
-			.col-xs-12.col-lg-6
-				p(style="margin-top: 20px;font-size: 24px;")
-					strong Tauriq
-					span (Managing Director)
-				p(style="font-size: 16px;") Cell: 079 129 5970
-				p(style="font-size: 16px;") Email: 
-					a(href="mailto:tauriq@ottomans.co.za") tauriq@ottomans.co.za
-
-		h1(style="margin-top:20px;text-align:center;") Get in touch with us
-
 		if enquirySubmitted
 			h3 Thanks for getting in touch.
 		else
@@ -76,6 +34,23 @@ block content
 						.form-actions
 							div(style="width:120px;margin:auto;")
 								button(type='submit', style="width: 160px;height: 80px;margin:auto;").btn.btn-primary Send
+
+		h1(style="margin-top:80px;text-align:center;") Contact Information
+		.row(style="border-top:1px solid rgb(156, 0, 186)")
+			.col-xs-12.col-lg-6
+				p(style="margin-top: 20px;font-size: 24px;")
+					strong Rashard Peck
+					span (Chief Executive Officer)
+				p(style="font-size: 16px;") Cell: (+27)&nbsp;76&nbsp;741&nbsp;7434
+				p(style="font-size: 16px;") Email: 
+					a(href="mailto:info@pioneerdesigns.co.za") info@pioneerdesigns.co.za
+			.col-xs-12.col-lg-6
+				p(style="margin-top: 20px;font-size: 24px;")
+					strong Reyaad Peck
+				p(style="font-size: 16px;") Cell: (+27)&nbsp;73&nbsp;601&nbsp;0864
+				p(style="font-size: 16px;") Email: 
+					a(href="mailto:info@pioneerdesigns.co.za") info@pioneerdesigns.co.za
+		#map(style="width:100%;height:400px;border-top:1px solid rgb(156, 0, 186);")
 
 block js
 	script(src="js/google-maps.js")

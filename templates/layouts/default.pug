@@ -15,7 +15,7 @@ html
 		title= title || 'Pioneer Designs'
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 		link(rel="alternate", hreflang="en", href="https://www.pioneerdesigns.co.za/")
-		link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet')
+		link(href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet")
 		//- Customise the stylesheet for your site by editing /public/styles/site.less
 		//- All .less files will be automatically compiled and minified in production.
 
@@ -61,14 +61,13 @@ html
 								span.icon-bar
 							|
 							a.navbar-brand(href='#')
-								img(src='/images/logo.svg')
+								div(id="logo")
 						|
 						#navbar.navbar-collapse.collapse
 							ul.nav.navbar-nav.navbar-left(style="background-color:transparent !important;")
-								each link in navLinks
-									li(style="z-index:0;",class=(section == link.key ? 'active' : null)): a(href=link.href, style="background-color:transparent !important;")= link.label
-
 							ul.nav.navbar-nav.navbar-right
+								each link in navLinks
+									li(style="z-index:0;",class=(section == link.key ? 'active nav-link' : 'nav-link')): a(href=link.href, style="background-color:transparent !important;")= link.label
 								li
 									a(href='https://web.facebook.com/' style="background-color:transparent !important;", target="_blank",)
 										#lnk_face.social-link
@@ -98,10 +97,10 @@ html
 			#slogan-bar
 				h2(style="text-align:center;padding-top:5px;color:#fff;") Quality is never a second guess
 			p(style="text-align:center;color:#fff;")
-				strong Head Office:
-				|  011 000 0000 |
-				strong(style="margin-left:5px;") Enquiries:
-				|  011 000 0000 |
+				strong Rashard Peck:
+				|  Cell: (+27)&nbsp;76&nbsp;741&nbsp;7434 |
+				strong(style="margin-left:5px;") Reyaad Peck:
+				|  Cell: (+27)&nbsp;73&nbsp;601&nbsp;0864 |
 				strong(style="margin-left:5px;") Website:
 				a(href="http://www.pioneerdesigns.co.za/")  www.pioneerdesigns.co.za
 			p(style="text-align:center;font-style:italic;font-size:16px;color:#fff;") Short Description Goes Here
@@ -156,6 +155,7 @@ html
 		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
 
 		script(src='/js/menu-toggle.js')
+		script(src='/js/nav-scroll-animation.js')
 		//script(src='/js/google-analytics.js')
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
@@ -167,4 +167,3 @@ html
 
 		//- Include template-specific javascript files by extending the js block
 		block js
-			

@@ -1,0 +1,15 @@
+/*#upper_text_container path
+{
+	fill:#502500;
+}*
+
+#logo-text path:hover
+{
+	fill:#FE7907;
+}*/
+
+#upper_text_container path
+{
+    stroke: black;
+    stroke-width: 5;
+}

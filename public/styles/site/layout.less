@@ -5,8 +5,16 @@
 
 *
 {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
 }
+
+::selection {
+	background: rgba(80,37,0, .5); /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+	background: rgba(80,37,0, .5); /* Gecko Browsers */
+  }
 
 body
 {
@@ -35,10 +43,26 @@ body
 }
 
 //setup navbar
-.navbar-brand img
+.navbar-brand #logo
 {
-	width:300px;
+	width:180px;
 	height:60px;
+	background:url(../../images/logo.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-top:-20px;
+}
+
+.navbar-brand #logo:hover
+{
+	width:180px;
+	height:60px;
+	background:url(../../images/logo_light.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-top:-20px;
 }
 
 .navbar-brand
@@ -49,60 +73,51 @@ body
 .navbar
 {
 	height: @nav-height;
-	background-color: rgba(0,0,0,.9);
+	background-color: rgba(0,0,0,.3);
 	border-bottom: 1px solid @system-accent-colour;
-	box-shadow: 0px 6px 10px #343434;
+	box-shadow: 0px 1px 2px #343434;
 	width:100%;
 }
 
-.navbar-left li
-{
-	width:140px;
-	height: @nav-height;
-}
-
-.navbar-left li a
+.navbar-right li a
 {
 	height: 0px;
 	background-color: none !important;
-	line-height: @nav-height*0.5;
+	line-height: @nav-height*0.7;
 	font-size: 13pt;
 	text-align: center;
+	color: @system-accent-colour !important;
+	font-weight: bold;
+	font-size: @nav-font-size !important;
+	text-align: center;
+}
+
+.navbar-right li a:hover
+{
+	color: #fff !important;
 }
 
 .navbar-right li
 {
 	margin-top:-10px;
+	height: @nav-height*1.15;
 }
 
-.navbar-nav a
+.navbar-right .nav-link
 {
-	color:#000;
-	font-size: @nav-font-size;
-	text-align: center;
-}
-
-.navbar-left  li:hover
-{
-	color: @system-accent-colour;
-}
-
-.navbar-left  li a:hover
-{
-	color: @system-accent-colour;
+	width:120px;
 }
 
 nav .active
 {
-	border-top: 1px solid @system-accent-colour;
-	background-color: #A3A3A3 !important;
+	border-top: 2px solid @system-accent-colour;
+	//background-color: #A3A3A3 !important;
 	border-bottom: 1px solid @system-accent-colour;
 }
 
 nav .active a
 {
-	color: @system-accent-colour;
-	background-color: #A3A3A3;
+	color: #fff !important;
 }
 
 .dropdown-menu
