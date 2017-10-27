@@ -15,9 +15,9 @@ block content
 				if(dir)
 					.col-sm-12.col-md-4.col-lg-3
 						a(href="http://95.85.57.110:8006/gallery/" + current + ":" + dir)
-							div(style='background:url(http://95.85.57.110:8006/images/folder.svg);width:280px;height:150px;')
+							div(style='background:url(http://95.85.57.110:8006/images/folder.svg);width:280px;height:150px;margin:auto;')
 								img(src="http://95.85.57.110:8006/gallery/"+ dir + "/thumbnail.jpg", style="width:150px;height:80px;margin-top: 55px;margin-left:60px;")
-							p(style="text-align:center;")= dir
+							p(style="text-align:center;font-size:25px;")= dir
 			each image, index in images
 				if(image)
 					.col-sm-12.col-md-4.col-lg-3

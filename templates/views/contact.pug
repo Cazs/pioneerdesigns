@@ -14,25 +14,25 @@ block content
 					form(method='post')
 						input(type='hidden', name='action', value='contact')
 						.form-group(class=validationErrors.name ? 'has-error' : null)
-							label Name
+							label(style="font-size:20px;") Name
 							input(type='text', name='name.full', value=formData['name.full']).form-control
 						.form-group(class=validationErrors.email ? 'has-error' : null)
-							label Email
+							label(style="font-size:20px;") Email
 							input(type='email', name='email', value=formData.email).form-control
 						.form-group
-							label Phone
+							label(style="font-size:20px;") Phone
 							input(type='text', name='phone', value=formData.phone, placeholder='(optional)').form-control
 						.form-group(class=validationErrors.enquiryType ? 'has-error' : null)
-							label What are you contacting us about?
+							label(style="font-size:20px;") What are you contacting us about?
 							select(name='enquiryType').form-control
 								option(value='') (select one)
 								each type in enquiryTypes
 									option(value=type.value, selected=formData.enquiryType == type.value)= type.label
 						.form-group(class=validationErrors.message ? 'has-error' : null)
-							label Message
+							label(style="font-size:20px;") Message
 							textarea(name='message', placeholder='Leave us a message...' rows=4).form-control= formData.message
 						.form-actions
-							div(style="width:120px;margin:auto;")
+							div(style="width:120px;margin:auto;font-size:20px;")
 								button(type='submit', style="width: 160px;height: 80px;margin:auto;").btn.btn-primary Send Message
 
 		h1(style="margin-top:80px;text-align:center;") Contact Information
