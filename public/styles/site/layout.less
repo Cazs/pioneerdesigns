@@ -43,9 +43,14 @@ body
 }
 
 //setup navbar
+.navbar-brand
+{
+	margin-top:5px;
+}
+
 .navbar-brand #logo
 {
-	width:180px;
+	width:200px;
 	height:60px;
 	background:url(../../images/logo.svg);
 	background-position: center;
@@ -56,18 +61,13 @@ body
 
 .navbar-brand #logo:hover
 {
-	width:180px;
+	width:200px;
 	height:60px;
 	background:url(../../images/logo_light.svg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 	margin-top:-20px;
-}
-
-.navbar-brand
-{
-	margin-top:5px;
 }
 
 .navbar
@@ -167,21 +167,6 @@ nav .active a
 	border-radius:10px;
 }
 
-//setup carousel
-#ottomans_carousel
-{
-	margin-top:50px;
-	height: 400px;
-	z-index: 0;
-	background-color: #AEAEAE;
-	border-bottom: 2px solid @system-accent-colour;
-}
-
-#ottomans_carousel .carousel-inner > .item > img
-{
-	margin: 0 auto;
-	height: 400px;
-}
 
 .carousel-control
 {
@@ -193,9 +178,10 @@ nav .active a
 #social-link-container
 {
   margin-top: -10px;
-  width: 200px;
+  width: 240px;
   margin-left:auto;
   margin-right: auto;
+  padding-left:60px;
 }
 
 #social-link-container li
@@ -252,6 +238,16 @@ nav .active a
 #lnk_inst:hover
 {
   background: url('/images/Instagram.svg');
+}
+
+.bullet
+{
+	width:15px;
+	height:15px;
+	background-color:#343434;
+	display:inline-block;
+	margin-right:15px;
+	border-radius:40px;
 }
 
 //setup gallery
@@ -313,21 +309,9 @@ nav .active a
 		margin-top:-@nav-height;
 		margin-left:-20px;
 	}
-	.navbar-toggle{
+	.navbar-toggle
+	{
 		margin-right:-10px;
-	}
-
-	#ottomans_carousel
-	{
-		height: 120px;
-		margin-top:60px;
-		background-color: #343434;
-		z-index: 0;
-	}
-	
-	#ottomans_carousel .carousel-inner > .item > img
-	{
-		height: 120px;
 	}
 
 	nav
@@ -404,19 +388,6 @@ nav .active a
 /* Small devices (smartphones, etc.) */
 @media screen and (max-width: 767px)
 {
-	#ottomans_carousel
-	{
-		height: 160px;
-		margin-top:60px;
-		background-color: #C1BFBF;
-		z-index: 0;
-	}
-  
-	#ottomans_carousel .carousel-inner > .item > img
-	{
-	  height: 160px;
-	}
-
 	nav
 	{
 	  z-index: 1;
@@ -427,11 +398,11 @@ nav .active a
 	{
 		background-color:rgba(0,0,0,.9);
 		height: 300px;
-	  //width: 90%;
+	  	//width: 90%;
 		margin-left: auto;
 		margin-right: auto;
-	  border-radius: 3px;
-		border:1px solid #6EC91E;
+	  	border-radius: 3px;
+		border:1px solid @system-accent-colour;
 		//margin-top: 0px !important;
 	}
 
@@ -443,31 +414,37 @@ nav .active a
 		background:none;
 	}
 
-	.navbar-right{
+	.navbar-right
+	{
 		background-color:#636363;
 		height:150px;
 	}
 
-	.navbar-right li div{
+	.navbar-right li div
+	{
 		margin:auto;
 	}
 
-	.promo{
+	.promo
+	{
 		width:350px;
 		height:450px;
 	}
 
-	.about-lists{
+	.about-lists
+	{
 		width:400px;
 	}
 
-	.active{
+	.active
+	{
 		background-color: transparent;
 		border: none;
 	}
 
-	.active a{
-		color: #6EC91E;
+	.active a
+	{
+		color: @system-accent-colour;
 	}
   
 	#navbar > ul > li a

@@ -14,19 +14,24 @@ exports = module.exports = function (req, res) {
 	locals.enquirySubmitted = false;
 
 	// On POST requests, add the Enquiry item to the database
-	view.on('post', { action: 'contact' }, function (next) {
+	view.on('post', { action: 'contact' }, function (next)
+	{
 
 		var newEnquiry = new Enquiry.model();
 		var updater = newEnquiry.getUpdateHandler(req);
 
-		updater.process(req.body, {
+		updater.process(req.body, 
+		{
 			flashErrors: true,
 			fields: 'name, email, phone, enquiryType, message',
 			errorMessage: 'There was a problem submitting your enquiry:',
-		}, function (err) {
-			if (err) {
+		}, function (err)
+		{
+			if (err)
+			{
 				locals.validationErrors = err.errors;
-			} else {
+			} else
+			{
 				locals.enquirySubmitted = true;
 			}
 			next();

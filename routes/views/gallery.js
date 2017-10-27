@@ -30,6 +30,7 @@ exports = module.exports = function (req, res)
 		{
 			var files = dir_data.toString().split(",");
 			var dirs = "";
+			var thumbs = "";
 			var images = "";
 			//look for directories
 			for(var i=0;i<files.length;i++)
@@ -38,9 +39,25 @@ exports = module.exports = function (req, res)
 				if(files[i].split('.').length<=1)
 				{
 					//is a dir
-					if(dirs.length>0)
-						dirs += ":" + files[i];
-					else dirs += files[i];
+					if(dirs.length>0)//if not first dir
+					{
+						dirs += ":" + files[i];//append
+					} else dirs += files[i];//set
+					//get first file in directorty and add it to thumbs list
+					readDir(base_path + path + files[i], function(err, dir_data)
+					{
+						if(err)
+						{
+							console.log(err);
+							return;
+						}
+						//found dir data
+						if(thumbs.length>0)//if not first thumbnail
+							thumbs += ":" + path + "/" + dir_data[i];//append
+						else thumbs += path + "/" + dir_data[i]; //set
+						console.log(">>>" + thumbs);
+						//console.log("dir %s has files: %s", files[i], dir_data);
+					});
 				}else
 				{
 					//is file
@@ -54,7 +71,7 @@ exports = module.exports = function (req, res)
 			console.log("dirs: %s", dirs.split(":"));//directories in current directory
 			console.log("files: %s", images.split(":"));//files in current directory
 
-			view.render('gallery', {"current":req.params.path?req.params.path:"", "dirs":dirs.split(":"), "images": images.split(":")});
+			view.render('gallery', {"current":req.params.path?req.params.path:"", "dirs":dirs.split(":"), "images": images.split(":"), "thumbs": thumbs});
 		}
 	});
 	/*if(path.length>0)
