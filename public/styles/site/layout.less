@@ -167,6 +167,13 @@ nav .active a
 	border-radius:10px;
 }
 
+#services
+{
+	font-size: 24px;
+	list-style:none;
+	width:60%;
+	margin:auto;
+}
 
 .carousel-control
 {
@@ -328,7 +335,7 @@ nav .active a
 		margin-left: auto;
 		margin-right: auto;
 		border-radius: 3px;
-		border:1px solid #6EC91E;
+		border:1px solid @system-accent-colour;;
 		//margin-top: 0px !important;
 	}
 
@@ -377,7 +384,8 @@ nav .active a
 }
 
 // Laptops
-@media screen and (min-width: 1360px){
+@media screen and (min-width: 1360px)
+{
 	.navbar-brand img
 	{
 		margin-top:-20px;
@@ -403,20 +411,19 @@ nav .active a
 		margin-right: auto;
 	  	border-radius: 3px;
 		border:1px solid @system-accent-colour;
-		//margin-top: 0px !important;
+		margin-top: 10px !important;
 	}
 
 	#navbar > ul > li
 	{
 		width: 100%;
-		height:40px;
+		height:70px;
 		background-color: transparent;
 		background:none;
 	}
 
 	.navbar-right
 	{
-		background-color:#636363;
 		height:150px;
 	}
 
@@ -464,25 +471,60 @@ nav .active a
 	{
 		width:150px;
 	}
+
+	#services
+	{
+		font-size: 24px;
+		list-style:none;
+		width:90%;
+		margin:auto;
+	}
+
+	#slogan-bar h2
+	{
+		font-size: 25px;
+	}
 }
 
  /* Medium devices (portrait iPads/tablets, etc.) */
 @media (min-width: 768px) and (max-width: 1023px)
 {
-	.navbar-nav a
+	.navbar-brand #logo
 	{
-		font-size: @nav-font-size-med;
+		width:270px;
+		height:70px;
+		margin-top:-20px;
+		margin-left:-60px;
 	}
 
-	.navbar-left li
+	.navbar
 	{
-		width:120px;
-		height: @nav-height;
+		height: 70px;
 	}
 
 	.navbar-right
 	{
-		display: none;
+		margin-top: -40px;
+		height:40px;
+		width:100%;
+		transform: rotate(180deg);
+	}
+
+	.navbar-right li
+	{		
+		float:right;
+		transform: rotate(-180deg);
+		margin-left:10px;
+	}
+
+	.nav-link
+	{
+		width:100px;
+	}
+
+	.navbar-nav a
+	{
+		font-size: 10px;
 	}
 
 	.active
@@ -500,12 +542,17 @@ nav .active a
 /* Large devices (small laptops, landscape tablets, etc.) */
 @media screen and (min-width: 1024px) and (max-width: 1365px)
 {
+	.navbar-right
+	{
+		margin-top: -45px;
+	}
+
 	.navbar-nav a
 	{
 		font-size: @nav-font-size;
 	}
 
-	.navbar-left li
+	.navbar-right li
 	{
 		width:150px;
 		height: @nav-height;
