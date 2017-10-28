@@ -58,15 +58,14 @@
 
 .mySlides {
   display: none;
-  margin-top: -70px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 600px;
+  margin-top: -100px;
+  margin-left: 30%;
 }
 
 .mySlides img{
-  margin-left: 100px;
-  width: 87%;
-  height:600px;
+  max-width: 100%;
+  max-height:100%;
   border-radius: 10px;
 }
 
@@ -149,29 +148,31 @@ img.hover-shadow {
 
   .mySlides 
   {
-    margin-top: -70px;
+    margin-top: 20px;
+    margin-left: 1px;
   }
 
   .mySlides img{
-    height: 270px;
-    width: 120%;
-    margin-left: -10%;
+    max-height: 400px;
+    width: 110%;
     border-radius: 20px;
   }
 
-  .numbertext {
-    margin-top: -10px;
+  .numbertext
+  {
+    margin-top: -25px;
+    margin-left:170px;
   }
 
   #img-nav{
     width:95%;
-    margin-top: 20px;
+    margin-top: -200px;
     margin-left: 40px;
   }
 
   .prev,
   .next {
-    top: 30%;
+    top: 80%;
     z-index:200;
   }
 }
