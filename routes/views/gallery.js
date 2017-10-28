@@ -44,7 +44,7 @@ exports = module.exports = function (req, res)
 						dirs += ":" + files[i];//append
 					} else dirs += files[i];//set
 					//get first file in directorty and add it to thumbs list
-					readDir(base_path + path + files[i], function(err, dir_data)
+					/*readDir(base_path + path + files[i], function(err, dir_data)
 					{
 						if(err)
 						{
@@ -55,9 +55,8 @@ exports = module.exports = function (req, res)
 						if(thumbs.length>0)//if not first thumbnail
 							thumbs += ":" + path + "/" + dir_data[i];//append
 						else thumbs += path + "/" + dir_data[i]; //set
-						console.log(">>>" + thumbs);
 						//console.log("dir %s has files: %s", files[i], dir_data);
-					});
+					});*/
 				}else
 				{
 					//is file
