@@ -72,7 +72,7 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback)
 		templateName: 'enquiry-notification',
 		transport: 'mailgun',
 	}).send({
-		to: 'info@pioneerdesigns.co.za',
+		to: 'casperndlovu42@gmail.com',//'info@pioneerdesigns.co.za',
 		from: {
 			name: 'Pioneer Designs Website',
 			email: 'info@pioneerdesigns.co.za',

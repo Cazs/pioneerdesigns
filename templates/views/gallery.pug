@@ -14,17 +14,17 @@ block content
 			each dir, i in dirs
 				if(dir)
 					.col-sm-12.col-md-4.col-lg-3
-						a(href="http://95.85.57.110:8006/gallery/" + current + ":" + dir)
-							//div(style="width:280px;height:150px;background-image:url(http://95.85.57.110:8006/gallery/"+ dir + "/thumbnail.jpg);background-size:contain;margin:auto;")
+						a(href="http://pioneerdesigns.co.za/gallery/" + current + ":" + dir)
+							//div(style="width:280px;height:150px;background-image:url(http://pioneerdesigns.co.za/gallery/"+ dir + "/thumbnail.jpg);background-size:contain;margin:auto;")
 							div(style="width:260px;height:130px;margin-left:20px;")
-								img(src="http://95.85.57.110:8006/gallery/"+ dir + "/thumbnail.jpg", style="max-width:auto;max-height:100%;margin-top: 55px;margin:auto;")
+								img(src="http://pioneerdesigns.co.za/gallery/"+ dir + "/thumbnail.jpg", style="max-width:auto;max-height:100%;margin-top: 55px;margin:auto;")
 							p(style="text-align:center;font-size:25px;")= dir
 			each image, index in images
 				if(image)
 					.col-sm-12.col-md-4.col-lg-3
 						div(class="img-container")
-							img.hover-shadow(src="http://95.85.57.110:8006/gallery/"+ image, onclick="openModal();currentSlide("+(index+1)+")")
-						//img.hover-shadow(src="http://95.85.57.110:8006/gallery/"+image, style="width:280px;height:150px;border-radius:10px;margin-top:5px;margin-bottom:10px;margin-left:10px;margin-right:10px;padding:10px;border:1px solid rgb(156,0,186);", onclick="openModal();currentSlide("+(index+1)+")")
+							img.hover-shadow(src="http://pioneerdesigns.co.za/gallery/"+ image, onclick="openModal();currentSlide("+(index+1)+")")
+						//img.hover-shadow(src="http://pioneerdesigns.co.za/gallery/"+image, style="width:280px;height:150px;border-radius:10px;margin-top:5px;margin-bottom:10px;margin-left:10px;margin-right:10px;padding:10px;border:1px solid rgb(156,0,186);", onclick="openModal();currentSlide("+(index+1)+")")
 		#myModal.modal
 			span.close.cursor(class="glyphicon glyphicon-remove", onclick="closeModal()", style="width:30px;height:30px;border-radius:50px;background-color: #fff;padding-left:3px;padding-top:3px;")
 			.modal-content(style="background: transparent;")
@@ -33,13 +33,13 @@ block content
 				each image, index in images
 					.mySlides(style="background: transparent;")
 						.numbertext= (index+1) +"/"+ images.length
-						img(src="http://95.85.57.110:8006/gallery/"+image)
+						img(src="http://pioneerdesigns.co.za/gallery/"+image)
 				a.prev(onclick="plusSlides(-1)") ❮
 				a.next(onclick="plusSlides(1)") ❯
 				#img-nav.row
 					each image, index in images
 						.col-xs-12.col-sm-6.col-md-4.col-lg-3(style="width:150px;height:60px;margin:auto;background-color:rgba(0,0,0,.7);border:2px solid black;")
-							img.demo(src="http://95.85.57.110:8006/gallery/"+image, style="width:100%;height:100%;", onclick="currentSlide("+(index+1)+")", alt=""+image)
+							img.demo(src="http://pioneerdesigns.co.za/gallery/"+image, style="width:100%;height:100%;", onclick="currentSlide("+(index+1)+")", alt=""+image)
 
 block js
 	script(src="/js/gallery.js")
