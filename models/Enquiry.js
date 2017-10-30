@@ -57,8 +57,8 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback)
 		"Subject": "New Enquiry From " + enquiry.name.first + " " + enquiry.name.last + " about " + enquiry.enquiryType,
 		//"Text-part": enquiry.name.first + " " + enquiry.name.last +" says,\n" + enquiry.message.html,
 		"Html-part": enquiry.name.first+" "+enquiry.name.last+" enquired about "+enquiry.enquiryType +",<br/><br/>"
-					+ "<h2>Phone:</h2><i>" + enquiry.phone + "</i><br/>"
-					+ "<h2>Message:</h2><br/><p>" + enquiry.message.html + "</p>",
+					+ "<h2>Phone:<i>" + enquiry.phone + "</i></h2><br/>"
+					+ "<h2>Message:</h2><br/><p>" + enquiry.message.html + "</p><br/><br/>"+"Kindest Regards,<br/>Pioneer Designs Mailing System.",
 		"Recipients":
 		[
 			{

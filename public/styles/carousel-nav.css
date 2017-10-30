@@ -102,9 +102,14 @@
 
 @media screen and (max-height: 736px) and (max-width: 430px)
 {
+  .carousel-inner > .item > .container
+  {
+    top:-20%;
+  }
+
   .carousel-inner > .item > img
   {
-    top:15%;
+    top:30%;
   }
 }
 
