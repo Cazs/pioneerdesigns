@@ -56,8 +56,9 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback)
 		"FromEmail": "system@pioneerdesigns.co.za",
 		"Subject": "New Enquiry From " + enquiry.name.first + " " + enquiry.name.last + " about " + enquiry.enquiryType,
 		//"Text-part": enquiry.name.first + " " + enquiry.name.last +" says,\n" + enquiry.message.html,
-		"Html-part": enquiry.name.first+" "+enquiry.name.last+" enquired about "+enquiry.enquiryType +",<br/><br/>"
-					+ "<h2>Phone:<i>" + enquiry.phone + "</i></h2><br/>"
+		"Html-part": "<p style='font-size:22px;'>"+enquiry.name.first+" "+enquiry.name.last+" enquired about <strong>"+enquiry.enquiryType +"</strong>,<br/><br/></p>"
+					+ "<h4>Phone:<i>" + enquiry.phone + "</i></h4><br/>"
+					+ "<h4>e-Mail:<i>" + enquiry.email + "</i></h4><br/>"
 					+ "<h2>Message:</h2><br/><p>" + enquiry.message.html + "</p><br/><br/>"+"Kindest Regards,<br/>Pioneer Designs Mailing System.",
 		"Recipients":
 		[
