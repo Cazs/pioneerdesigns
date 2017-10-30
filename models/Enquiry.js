@@ -16,16 +16,16 @@ Enquiry.add({
 	email: { type: Types.Email, required: true },
 	phone: { type: String },
 	enquiryType: { type: Types.Select, options: [
-		{ value: 'message', label: 'Corner Suites' },
-		{ value: 'message', label: 'Dining Room Chairs' },
-		{ value: 'message', label: 'Period Designs and Carved Furniture' },
-		{ value: 'message', label: 'Fabric Couches' },
-		{ value: 'message', label: 'Leather Couches' },
-		{ value: 'message', label: 'Occasional Chairs and Ottomans' },
-		{ value: 'message', label: 'Headboards' },
-		{ value: 'message', label: 'Bar Stools' },
-		{ value: 'message', label: 'Just leaving a message' },
-		{ value: 'question', label: 'I\'ve got a question' }
+		{ value: 'Corner Suites', label: 'Corner Suites' },
+		{ value: 'Dining Room Chairs', label: 'Dining Room Chairs' },
+		{ value: 'Period Designs and Carved Furniture', label: 'Period Designs and Carved Furniture' },
+		{ value: 'Fabric Couches', label: 'Fabric Couches' },
+		{ value: 'Leather Couches', label: 'Leather Couches' },
+		{ value: 'Occasional Chairs and Ottomans', label: 'Occasional Chairs and Ottomans' },
+		{ value: 'Headboards', label: 'Headboards' },
+		{ value: 'Bar Stools', label: 'Bar Stools' },
+		{ value: 'Just leaving a message', label: 'Just leaving a message' },
+		{ value: 'A Question', label: 'I\'ve got a question' }
 	] },
 	message: { type: Types.Markdown, required: true },
 	createdAt: { type: Date, default: Date.now },
@@ -47,7 +47,69 @@ Enquiry.schema.post('save', function ()
 
 Enquiry.schema.methods.sendNotificationEmail = function (callback)
 {
-	if (typeof callback !== 'function')
+	var enquiry = this;
+	var mailjet = require('node-mailjet').connect('f8d3d1d74c95250bb2119063b3697082','8304b30da4245632c878bf48f1d65d92');
+	var message = "this is a test";
+	//send email notification to stakeholders
+	var request = mailjet.post("send").request(
+	{
+		"FromName": enquiry.name.first+" "+enquiry.name.last,
+		"FromEmail": "system@pioneerdesigns.co.za",
+		"Subject": "New Enquiry From " + enquiry.name.first + " " + enquiry.name.last + " about " + enquiry.enquiryType,
+		//"Text-part": enquiry.name.first + " " + enquiry.name.last +" says,\n" + enquiry.message.html,
+		"Html-part": enquiry.name.first+" "+enquiry.name.last+" enquired about "+enquiry.enquiryType +",<br/><br/>"
+					+ "Phone:" + enquiry.phone + "<br/>" +
+					+ "Message:<br/>" + enquiry.message.html,
+		"Recipients":
+		[
+			{
+				"Email": "info@pioneerdesigns.co.za"
+			}
+		]
+		}, function(err, res)
+		{
+			if(err)
+			{
+				console.log('email send error: %s', err);
+				if(callback)
+					callback(err);
+				return;
+			}
+			console.log('email sent to [info@pioneerdesigns.co.za].');
+			//send email to user/client as well.
+			var msg = "<p>Hi " + enquiry.name.first+",<br/>We've received your enquiry about " + enquiry.enquiryType
+						" and one of our consultants will get back to you soon.</p><br/><br/>";
+				msg += "<h3>Your message was:</h3><br/><i>" + enquiry.message.html + "</i><br/><br/>";
+				msg += "<h3>Thank you!</h3><br/><br/>Kindest Regards,<br/>Pioneer Designs Team.";
+			request = mailjet.post("send").request(
+			{
+				"FromName": "Pioneer Designs",
+				"FromEmail": "system@pioneerdesigns.co.za",
+				"Subject": "Enquiry Receipt",
+				//"Text-part": msg,
+				"Html-part": msg,
+				"Recipients":
+				[
+					{
+						"Email": enquiry.email
+					}
+				]
+			}, function(err, res)
+			{
+				if(err)
+				{
+					console.log('could not send email to [%s]: %s', enquiry.email, err);
+				}else
+				{
+					console.log('email successfully sent to [%s] ', enquiry.email);
+				}
+				if(callback)
+					callback(err);
+			});
+		}
+	);
+
+	/*if (typeof callback !== 'function')
 	{
 		callback = function (err) 
 		{
@@ -80,7 +142,7 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback)
 		subject: 'New Enquiry from ' + enquiry.name,
 		enquiry: enquiry,
 		brand: brand,
-	}, callback);
+	}, callback);*/
 };
 
 Enquiry.defaultSort = '-createdAt';
