@@ -49,7 +49,6 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback)
 {
 	var enquiry = this;
 	var mailjet = require('node-mailjet').connect('f8d3d1d74c95250bb2119063b3697082','8304b30da4245632c878bf48f1d65d92');
-	var message = "this is a test";
 	//send email notification to stakeholders
 	var request = mailjet.post("send").request(
 	{
@@ -58,8 +57,8 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback)
 		"Subject": "New Enquiry From " + enquiry.name.first + " " + enquiry.name.last + " about " + enquiry.enquiryType,
 		//"Text-part": enquiry.name.first + " " + enquiry.name.last +" says,\n" + enquiry.message.html,
 		"Html-part": enquiry.name.first+" "+enquiry.name.last+" enquired about "+enquiry.enquiryType +",<br/><br/>"
-					+ "Phone:" + enquiry.phone + "<br/>" +
-					+ "Message:<br/>" + enquiry.message.html,
+					+ "<h2>Phone:</h2><i>" + enquiry.phone + "</i><br/>"
+					+ "<h2>Message:</h2><br/><p>" + enquiry.message.html + "</p>",
 		"Recipients":
 		[
 			{
