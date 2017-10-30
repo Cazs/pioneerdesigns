@@ -37,7 +37,8 @@ html
 		link(href="/styles/site.min.css", rel="stylesheet")
 
 		block head
-
+		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-108925356-1")
+		script(src='/js/gtag.js')
 	//- HTML BODY
 	body
 
@@ -151,9 +152,7 @@ html
 		script(src='/js/menu-toggle.js')
 		script(src='/js/nav-scroll-animation.js')
 		//- Google Analytics
-		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-108925356-1")
 		script(src='/js/google-analytics.js')
-		script(src='/js/gtag.js')
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
