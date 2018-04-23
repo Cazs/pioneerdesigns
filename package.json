@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "keystone": "4.0.0-beta.5",
+    "keystone": "*",
     "lodash": "^4.13.1",
     "pug": "2.0.0-beta11",
     "dotenv": "4.0.0",
